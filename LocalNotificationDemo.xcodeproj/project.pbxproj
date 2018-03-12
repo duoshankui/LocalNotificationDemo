@@ -13,6 +13,7 @@
 		28B37A2A20565C4A00D4C217 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28B37A2920565C4A00D4C217 /* Assets.xcassets */; };
 		28B37A2D20565C4A00D4C217 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28B37A2B20565C4A00D4C217 /* LaunchScreen.storyboard */; };
 		28B37A3020565C4A00D4C217 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B37A2F20565C4A00D4C217 /* main.m */; };
+		28B37A382056662300D4C217 /* AppDelegate+PrevateMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B37A372056662300D4C217 /* AppDelegate+PrevateMethod.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		28B37A2C20565C4A00D4C217 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		28B37A2E20565C4A00D4C217 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28B37A2F20565C4A00D4C217 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		28B37A362056662300D4C217 /* AppDelegate+PrevateMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+PrevateMethod.h"; sourceTree = "<group>"; };
+		28B37A372056662300D4C217 /* AppDelegate+PrevateMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+PrevateMethod.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,8 @@
 				28B37A2B20565C4A00D4C217 /* LaunchScreen.storyboard */,
 				28B37A2E20565C4A00D4C217 /* Info.plist */,
 				28B37A2F20565C4A00D4C217 /* main.m */,
+				28B37A362056662300D4C217 /* AppDelegate+PrevateMethod.h */,
+				28B37A372056662300D4C217 /* AppDelegate+PrevateMethod.m */,
 			);
 			path = LocalNotificationDemo;
 			sourceTree = "<group>";
@@ -143,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28B37A2520565C4A00D4C217 /* ViewController.m in Sources */,
+				28B37A382056662300D4C217 /* AppDelegate+PrevateMethod.m in Sources */,
 				28B37A3020565C4A00D4C217 /* main.m in Sources */,
 				28B37A2220565C4A00D4C217 /* AppDelegate.m in Sources */,
 			);
@@ -279,7 +285,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8U4W3UH723;
 				INFOPLIST_FILE = LocalNotificationDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.wangxiao.LocalNotificationDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -292,7 +300,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8U4W3UH723;
 				INFOPLIST_FILE = LocalNotificationDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.wangxiao.LocalNotificationDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

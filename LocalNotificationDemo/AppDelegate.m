@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "AppDelegate+PrevateMethod.h"
 
 @interface AppDelegate ()
 
@@ -17,7 +18,52 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    if (launchOptions != nil) {
+        UILocalNotification *localNotification = [launchOptions objectForKey:@"UIApplicationLaunchOptionsLocalNotificationKey"];
+        if (localNotification != nil) {
+            NSInteger number = [[UIApplication sharedApplication] applicationIconBadgeNumber] - 1;
+            [application setApplicationIconBadgeNumber:(number >= 0 ? number : 0)];
+        }
+    }
+    
+    [self registUserNotificationSettingForIOS8];
+    
     return YES;
+}
+
+/**
+ *  1.当app在前台时，若有通知，会调用此方法
+ *  2.当应用程序在后台状态下，点击推送通知，程序从后台进入前台，会调用此方法（锁屏界面从后台进入前台也会执行此方法）
+ *  3.当应用程序完全退出时不执行此方法
+ */
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
+{
+    NSLog(@"notification: %@",notification);
+    UIApplicationState state = [UIApplication sharedApplication].applicationState;
+    if (state == UIApplicationStateActive) {
+        //前台
+    }
+    else if (state == UIApplicationStateInactive)  
+    {
+        NSInteger number = [[UIApplication sharedApplication] applicationIconBadgeNumber] - 1;
+        [application setApplicationIconBadgeNumber:(number >= 0 ? number : 0)];
+    }
+    [application cancelLocalNotification:notification];
+}
+
+
+//监听附加操作按钮
+- (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forLocalNotification:(UILocalNotification *)notification completionHandler:(void (^)())completionHandler
+{
+    NSLog(@"identifier:%@",identifier);
+    completionHandler();
+}
+
+- (void)application:(UIApplication *)application handleActionWithIdentifier:(nullable NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo withResponseInfo:(NSDictionary *)responseInfo completionHandler:(void(^)())completionHandler
+{
+    NSLog(@"identifier:%@ -- content : %@",identifier,responseInfo);
+    completionHandler();
 }
 
 
